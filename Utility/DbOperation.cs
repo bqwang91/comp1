@@ -62,15 +62,8 @@ namespace StockSenti
             List<Article> articleList = new List<Article>();
 
             DbCommand command = connection.CreateCommand();
-            command.CommandText = "SELECT date,title,source,content,classification FROM " + companyCode + "Articles LIMIT 5";
+            command.CommandText = "SELECT id,date,title,source,content,classification FROM " + companyCode + "Articles";
             command.Prepare();
-
-            /*
-            DbParameter id = command.CreateParameter();
-            id.ParameterName = "@id";
-            id.Value = "1";
-            command.Parameters.Add(id);
-             * */
 
             Reader = command.ExecuteReader();
 
@@ -78,11 +71,39 @@ namespace StockSenti
             {
                 Article newArticle = new Article();
 
-                newArticle.Date = Reader.GetValue(0).ToString();
-                newArticle.Title = Reader.GetValue(1).ToString();
-                newArticle.Source = Reader.GetValue(2).ToString();
-                newArticle.Content = Reader.GetValue(3).ToString();
-                newArticle.Classification = Reader.GetValue(4).ToString();
+                newArticle.Id = Reader.GetValue(0).ToString();
+                newArticle.Date = Reader.GetValue(1).ToString();
+                newArticle.Title = Reader.GetValue(2).ToString();
+                newArticle.Source = Reader.GetValue(3).ToString();
+                newArticle.Content = Reader.GetValue(4).ToString();
+                newArticle.Classification = Reader.GetValue(5).ToString();
+                articleList.Add(newArticle);
+            }
+            Reader.Close();
+            return articleList;
+        }
+
+        public static List<Article> getSomeAricles(DbConnection connection, string companyCode, int lowerBound, int higherBound)
+        {
+            DbDataReader Reader;
+            List<Article> articleList = new List<Article>();
+
+            DbCommand command = connection.CreateCommand();
+            command.CommandText = "SELECT id,date,title,source,content,classification FROM " + companyCode + "Articles WHERE id BETWEEN " + lowerBound.ToString() + " AND " + higherBound.ToString();
+            command.Prepare();
+
+            Reader = command.ExecuteReader();
+
+            while (Reader.Read())
+            {
+                Article newArticle = new Article();
+
+                newArticle.Id = Reader.GetValue(0).ToString();
+                newArticle.Date = Reader.GetValue(1).ToString();
+                newArticle.Title = Reader.GetValue(2).ToString();
+                newArticle.Source = Reader.GetValue(3).ToString();
+                newArticle.Content = Reader.GetValue(4).ToString();
+                newArticle.Classification = Reader.GetValue(5).ToString();
                 articleList.Add(newArticle);
             }
             Reader.Close();

@@ -172,6 +172,10 @@ namespace StockSenti
                     
 
                     string crawledContent = crawlNewsContent(articleUrl, source, sourceArticleMap);
+                    if (crawledContent.Equals("404"))
+                    {
+                        continue;
+                    }
                     string cleanedCrawledContent = Utility.remvoveJavaScriptWarnings(crawledContent);
 
                     newArticle.Content = cleanedCrawledContent;
@@ -180,7 +184,7 @@ namespace StockSenti
                 }
 
                 HtmlNode aNode = nextPageNode.SelectSingleNode("a[1]");
-                string nextPageLink = aNode.Attributes["href"].Value;
+                string nextPageLink = Utility.cleanUrlAmp(aNode.Attributes["href"].Value);
                 this._seedUrl = nextPageLink;
             }
 
@@ -189,7 +193,10 @@ namespace StockSenti
         public string crawlNewsContent(string url, string source, Dictionary<string, string> sourceArticleMap)
         {
             String webContent = this.getUrlContent(url);
-
+            if (webContent.Equals("404"))
+            {
+                return webContent;
+            }
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(webContent);
             string className = "";

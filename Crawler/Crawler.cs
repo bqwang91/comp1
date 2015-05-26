@@ -29,7 +29,16 @@ namespace StockSenti
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            HttpWebResponse response;
+
+            try
+            {
+                response = request.GetResponse() as HttpWebResponse;
+            }
+            catch (WebException ex)
+            {
+                return "404";
+            }
 
             Stream resStream = response.GetResponseStream();
 

@@ -71,7 +71,7 @@ namespace StockSenti
 
                             string month = Utility.getMonthNumber(dateTokens[1]);
                             date = dateTokens[2] + "-" + month + "-" + dateTokens[0] ;
-                            closePrice = tdNodes[4].InnerHtml.ToDouble();
+                            closePrice = double.Parse(tdNodes[4].InnerHtml);
                             int priceInfoCount = priceInfoContainer.Count;
                             if (priceInfoCount > 0)
                             { 
@@ -86,7 +86,7 @@ namespace StockSenti
                                 double marketPrice = 0.0;
                                 if (!markePriceString.Equals("null"))
                                 {
-                                    marketPrice = markePriceString.ToDouble();
+                                    marketPrice = double.Parse(markePriceString);
                                 }
                                 priceInfoContainer[priceInfoCount - 1].Performance = priceInfoContainer[priceInfoCount - 1].getPerformance(marketPrice);
                             }

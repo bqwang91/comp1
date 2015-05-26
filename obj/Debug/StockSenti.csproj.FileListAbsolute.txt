@@ -11,13 +11,5 @@ c:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\Wind
 c:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\System.Data.SQLite.Linq.dll
 C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\StockSenti.Form1.resources
 C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\Centivus.EnglishStemmer.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.Charsets.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.Core.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.Security.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.SwingAWT.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.Text.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.Util.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.OpenJDK.XML.API.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\IKVM.Runtime.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\libsvm.dll
-C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\LIBSVM.NET.dll
+C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\LibSVMsharp.dll
+C:\Users\wyx\Documents\Visual Studio 2013\Projects\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\LibSVMsharp.pdb
